@@ -1,0 +1,9 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ PDF_form.as_p }}
+    <input type="submit" value="Update">
+    </form>
+{% endblock content %}

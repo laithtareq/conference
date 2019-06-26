@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <div class="detail">
+    Add new Manuscript
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="titlte"> Tilte </label><br>
+        <input type="text" name="title" id="title" placeholder="Write your title here"><br>
+        <label for="category"> Category </label><br>
+        <select name="category" id="category">
+            {% for category in categorys %}
+            <option value={{ category }}>{{ category }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="text"> Text </label><br>
+        <textarea name="text" id="text"> </textarea><br>
+        <input type="checkbox" id="ispaperoriginal" value="ispaperoriginal"> All contents of this paper original <br>
+        <input type="checkbox" id="published" value="published"> Paper has been previously published<br>
+        <input type="checkbox" id="undercosideration" value="undercosideration"> Paper is under consideration<br>
+        <input type="checkbox" id="containcopyright" value="containcopyright"> Paper contain copyrighted material<br>
+        <input type="file" name="file">
+        <input type="submit" value="Add">
+    </form>
+    </div>
+{% endblock content %}

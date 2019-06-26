@@ -1,0 +1,13 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+
+    <h3>My Manuscript</h3>
+    {% for manuscript in Manuscripts %}
+       <a href="{% url 'detail' manuscript.id %}">
+        <div class="manuscript">
+        {{ manuscript.title }} {%if manuscript.containcopyright %}  <small><i class="far fa-registered"></i></small> {% endif %}
+        </div></a>
+
+    {% endfor %}
+{% endblock content %}

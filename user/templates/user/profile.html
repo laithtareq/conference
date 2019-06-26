@@ -1,0 +1,35 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="message">{{ message }} <i class="fas fa-check"></i> </div> <br>
+    {% endfor %}
+    {% endif %}
+    <img src="{{ user.profile.image.url }}" class="profile">
+    <div class="profileInfo">
+    <a href="{% url 'profile_update' %}"> <i class="far fa-edit"></i> Update my profile </a><br>
+     User name : {{user.username}} <br>
+     First name : {{user.first_name}}<br>
+     Last name : {{user.last_name}}<br>
+     e-mail : {{user.email}}<br>
+    </div>
+    <h2> My Manuscript </h2>
+    {% for post in posts %}
+        <a href="{% url 'update_manuscript' post.id %}">
+<div class="post">
+     <small> Posted at {{post.post_date}}</small>
+    <h3>{{post.title}}</h3>
+    <p>Category : {{post.category}}</p>
+<small>{%if  post.ispaperoriginal %} All contents of this paper original {% endif %} </small>
+    <p></p>
+<small>{%if  post.published %} Paper has been previously published {% endif %}</small>
+<p></p>
+<small>{%if  post.undercosideration %} Paper is under consideration {% endif %} </small>
+<p></p>
+<small>{%if  post.containcopyright %} Paper contain copyrighted material <i class="far fa-registered"></i> {% endif %}</small>
+<p></p>
+</div> </a>
+<p></p>
+{% endfor %}
+{% endblock content %}

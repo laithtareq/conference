@@ -1,0 +1,24 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+<img src="{{ user.profile.image.url }}" class="profile">
+{{ user }} <p> </p>
+{% for post in posts %}
+        <a href="{% url 'detail' post.id %}">
+<div class="post">
+     <small> Posted at {{post.post_date}} by {{ post.author }}</small>
+    <h3>{{post.title}}</h3>
+    <p>Category : {{post.category}}</p>
+<small>{%if  post.ispaperoriginal %} All contents of this paper original {% endif %} </small>
+    <p></p>
+<small>{%if  post.published %} Paper has been previously published {% endif %}</small>
+<p></p>
+<small>{%if  post.undercosideration %} Paper is under consideration {% endif %} </small>
+<p></p>
+<small>{%if  post.containcopyright %} Paper contain copyrighted material <i class="far fa-registered"></i> {% endif %}</small>
+<p></p>
+</div> </a>
+    <a href="{{ post.file.url }}"> <img src="{{ post.fileImg.url }}" class="post"> </a>
+<p></p>
+{% endfor %}
+{% endblock content %}

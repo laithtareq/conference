@@ -1,0 +1,26 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+
+    <div class="detail">
+    Add new Manuscript
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title"> Tilte </label><br>
+        {{ form.title }} <br>
+        <label for="category"> Category </label><br>
+        {{ form.category }} <br>
+        <label for="text"> Text </label><br>
+        {{ form.text }}<br>
+        {{ form.ispaperoriginal }} All contents of this paper original <br>
+        {{ form.published }} Paper has been previously published<br>
+        {{ form.undercosideration }} Paper is under consideration<br>
+        {{ form.containcopyright }} Paper contain copyrighted material<br>
+        <label for="file">Upload your file here </label><br>
+        <input type="file" name="file"><br>
+        <label for="file">Upload Image for your file here </label><br>
+        <input type="file" name="fileImg"><br>
+        <input type="submit" value="Add">
+    </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'eighthConference/base.html' %}
+{% block content %}
+{% load static %}
+
+    <h3> New User</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="username">Username </label> <br>
+        <input type="text" name="username" id="username" placeholder="Write your username"><br>
+        <label for="first_name">First name </label> <br>
+        <input type="text" name="first_name" id="first_name" placeholder="Write your first name"><br>
+        <label for="last_name">Last name </label> <br>
+        <input type="text" name="last_name" id="last_name" placeholder="Write your last name"><br>
+        <label for="password1">password </label> <br>
+        <input type="password" name="password1" id="password1" placeholder="Write your password"><br>
+        <label for="password2">Conform your password </label> <br>
+        <input type="password" name="password2" id="password2" placeholder="Conform your password"><br>
+        <label for="email">e-mail </label> <br>
+        <input type="email" name="email" id="email" placeholder="ex@somthing.com"><br>
+        <input type="submit" value="Log up">
+    </form>
+{% endblock content %}

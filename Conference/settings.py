@@ -25,7 +25,7 @@ SECRET_KEY = '5B042Efdabc22B75101531782921A6407A9Ed314C4D7C9D9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://eighthconferencesite.herokuapp.com/']
 
 
 # Application definition

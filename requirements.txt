@@ -10,7 +10,7 @@ image==1.5.27
 mpmath==1.1.0
 numpy==1.16.2
 Pillow==6.0.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 psycopg2==2.8.2
 psycopg2-binary==2.8.2
 Pygments==2.3.1

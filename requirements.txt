@@ -8,7 +8,7 @@ gunicorn==19.9.0
 idna==2.8
 image==1.5.27
 mpmath==1.1.0
-numpy==1.16.2
+numpy==1.22.0
 Pillow==6.0.0
 pipenv==2018.11.26
 psycopg2==2.8.2
